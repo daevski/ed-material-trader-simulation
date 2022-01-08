@@ -156,6 +156,8 @@ label[for="material-type"] {
 
 div#idle-status-readout {
     width: 829px;
+    position: relative;
+    top: 10px;
     text-align: center;
     font-size: large;
     font-style: italic;
@@ -168,12 +170,19 @@ div#material-choice-readout,
     font-size: large;
 }
 
-div#material-choice-readout span {
+div#material-choice-readout {
+    background-color: orange;
     color: black;
-    background-color: rgb(255,165,0);
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    height: 22px;
+    padding-top: 1px;
 }
 
 .status-msg {
+    position: relative;
+    top: 10px;
     font-style: italic;
 }
 
@@ -269,6 +278,7 @@ button.table-height {
 }
 
 
+.material-box[data-selected-output] .conversion-ratio,
 .material-box:hover .conversion-ratio {
     display: none;
 }
@@ -347,14 +357,6 @@ button.table-height {
     background-color: rgb(255,165,0);
     color: black;
 }
-
-/* .modified {
-    border: 1px dashed whitesmoke;
-}
-
-.material-box:hover .modified {
-    border: 1px dashed black;
-} */
 
 .confirm-trade-button {
     margin-top: 18px
@@ -446,6 +448,15 @@ hr.offer-divider {
     background-size: 30px 26px;
 }
 
+#choice-material-icon {
+    display: inline-block;
+    margin: 0 14px;
+    width: 20px;
+    height: 17px;
+    background-size: 20px 17px;
+    filter: brightness(0%);
+}
+
 .conversion-ratio.visible {
     visibility: visible;
 }
@@ -484,19 +495,19 @@ hr.offer-divider {
     font-size: medium;
 }
 
-.rarity-icon.grade-1 {
+.grade-1-icon {
     background-image: url('../img/material-grades/Grade-1.png');
 }
-.rarity-icon.grade-2 {
+.grade-2-icon {
     background-image: url('../img/material-grades/Grade-2.png');
 }
-.rarity-icon.grade-3 {
+.grade-3-icon {
     background-image: url('../img/material-grades/Grade-3.png');
 }
-.rarity-icon.grade-4 {
+.grade-4-icon {
     background-image: url('../img/material-grades/Grade-4.png');
 }
-.rarity-icon.grade-5 {
+.grade-5-icon {
     background-image: url('../img/material-grades/Grade-5.png');
 }
 

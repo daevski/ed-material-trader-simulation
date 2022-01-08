@@ -16,7 +16,7 @@ export default class MaterialDetailPanel extends React.Component {
         return (
             <div className="material-detail-panel">
                 <ConversionRatio />
-                <div className={`rarity-icon grade-${rarityNumber}`} data-rarity={rarityNumber}></div>
+                <div className={`rarity-icon grade-${rarityNumber}-icon`} data-rarity={rarityNumber}></div>
                 <div className='material-count'>{this.getMaterialCount(material)}</div>
                 <div className='material-name'>{capitalized_name}</div>
                 <div className='cancel-selection'>Cancel</div>

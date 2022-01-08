@@ -1,5 +1,24 @@
 import { initOfferInputs, initOfferOutputs, initOfferMaterialTotals } from "./MaterialOfferPanel/materialOfferPanelFunctions"
 
+export function updateStatusReadout() {
+    var selectedOutputBox = document.querySelector('[data-selected-output]')
+
+    if (selectedOutputBox) {
+        var materialReadout = document.getElementById('material-choice-readout')
+        var readoutName = materialReadout.querySelector('#choice-material-name')
+        var readoutIcon = materialReadout.querySelector('#choice-material-icon')
+        var readoutQuantity = materialReadout.querySelector('#choice-material-count')
+        var materialNameValue = selectedOutputBox.querySelector('.material-name').innerText
+        var materialCountValue = selectedOutputBox.querySelector('.material-count').innerText
+        var materialGradeValue = selectedOutputBox.querySelector('[data-rarity]').dataset.rarity
+
+        readoutName.innerText = materialNameValue
+        readoutIcon.classList.add(`grade-${materialGradeValue}-icon`)
+        readoutQuantity.innerText = materialCountValue
+
+    }
+}
+
 export function materialBoxHover(e) {
     var selectedOutputBox = document.querySelector('[data-selected-output]')
     if (!selectedOutputBox) {
@@ -13,11 +32,13 @@ export function materialBoxHover(e) {
 export function materialBoxClick(e) {
     var isOfferPanelChild = e.target.closest('.material-offer-panel')
 
+
     if (e.target.className == 'cancel-trade-button' || !isOfferPanelChild) {
         this.setSelectedBoxes(e)
         this.toggleRatioElements(e)
         this.toggleStatusMessaging()
     }
+    updateStatusReadout()
 }
 
 export function setSelectedBoxes(e, custom = null) {
