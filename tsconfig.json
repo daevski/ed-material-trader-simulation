@@ -31,5 +31,11 @@
     "exclude": [
         "node_modules",
         "build"
-    ] // *** The files to not type check ***
+    ], // *** The files to not type check ***
+    "baseUrl": "./",
+    "paths": {
+        "*": [
+            ".snowpack/types/*"
+        ]
+    },
 }
