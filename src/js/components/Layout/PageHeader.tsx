@@ -1,4 +1,5 @@
-import React from 'https://cdn.skypack.dev/react';
+// @ts-ignore typescript error for remote import
+import * as React from 'https://cdn.skypack.dev/react';
 
 export default class PageHeader extends React.Component {
     render() {

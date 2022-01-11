@@ -1,11 +1,21 @@
+// @ts-ignore typescript error for remote import
 import React from 'https://cdn.skypack.dev/react';
 
 import { toggleUserDataOptions } from './layoutFunctions';
+
+type UserDataSectionProps = {
+    getFile: any
+}
+
+type UserDataSectionState = {
+    toggleUserDataOptions: any
+}
+
 export default class UserDataSection extends React.Component {
-    constructor(props) {
-        super(props)
-        this.toggleUserDataOptions = toggleUserDataOptions.bind(this)
-    }
+    props: UserDataSectionProps = { getFile: null }
+    state: UserDataSectionState = { toggleUserDataOptions: null }
+    // FIXME: This class method likely won't work. See 'fixme' todo on getFile function...
+    toggleUserDataOptions = () => toggleUserDataOptions.bind(this)
     render() {
         return (
             <div id='user-data-section'>
