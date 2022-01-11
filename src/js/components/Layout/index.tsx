@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'https://cdn.skypack.dev/react';
 
 import PageHeader from './PageHeader';
@@ -7,13 +8,14 @@ import UserDataSection from './UserDataSection';
 import { getFile } from './layoutFunctions';
 
 export default class Layout extends React.Component {
-    constructor(props) {
-        super(props);
-        this.getFile = getFile.bind(this)
+    constructor() {
+        super();
         this.state = {
             userData: null
         }
     }
+
+    getFile = () => getFile.bind(this)
     render() {
         var allMaterialData = this.props.materialData
         return (

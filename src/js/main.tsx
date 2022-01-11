@@ -1,4 +1,6 @@
+// @ts-ignore
 import React from 'https://cdn.skypack.dev/react';
+// @ts-ignore
 import ReactDOM from 'https://cdn.skypack.dev/react-dom';
 
 import Layout from "./components/Layout/index";
@@ -128,4 +130,5 @@ var allMaterialData = {
   ]
 }
 
+// @ts-ignore
 ReactDOM.render(<Layout materialData={allMaterialData} />, document.getElementById("root"));
