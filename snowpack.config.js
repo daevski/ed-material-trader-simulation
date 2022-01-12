@@ -1,7 +1,7 @@
 // Snowpack Configuration File
 // See all supported options: https://www.snowpack.dev/reference/configuration
 
-process.env.SNOWPACK_PUBLIC_APP_VERSION = '2022.01.08';
+process.env.SNOWPACK_PUBLIC_APP_VERSION = '2022.01.12';
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
@@ -9,10 +9,11 @@ module.exports = {
     src: "/"
   },
   plugins: [
-    /* ... */
+    '@snowpack/plugin-typescript'
   ],
   packageOptions: {
-    /* ... */
+    source: 'remote',
+    types: true,
   },
   devOptions: {
     /* ... */

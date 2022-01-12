@@ -1,4 +1,15 @@
-build/
+# NODE.JS
 node_modules/
-.DS_Store
+
+# snowpack.dev
+build/
+.snowpack/
+
+# VS Code
 .vscode/
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# System files
+.DS_Store
