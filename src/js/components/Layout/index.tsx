@@ -17,7 +17,7 @@ type LayoutState = {
 export default class Layout extends Component<LayoutState, LayoutProps> {
   state: LayoutState = { userData: null };
   props: LayoutProps = { materialData: null };
-  getFile = (e: Event) => getFile(e);
+  getFile = (e: Event) => getFile(e, this);
   render() {
     let allMaterialData = this.props.materialData;
     return (

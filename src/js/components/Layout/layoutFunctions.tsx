@@ -1,15 +1,17 @@
-export function getFile(e: Event) {
+import React, { Component } from 'react';
+
+export function getFile(e: Event, thisComponent: Component) {
   e.preventDefault();
   const reader = new FileReader();
   reader.onload = (e: ProgressEvent<FileReader>) => {
     if (e.target && e.target.result) {
       const text = e.target.result;
 
-      if (text == typeof 'string') {
+      if (typeof text == 'string') {
         var journalData = text.split(/\r\n|\n/);
         for (var lineNum = 0; lineNum < journalData.length - 1; lineNum++) {
           if (journalData[lineNum].includes('"event":"Materials"')) {
-            this.setState({ userData: JSON.parse(journalData[lineNum]) });
+            thisComponent.setState({ userData: JSON.parse(journalData[lineNum]) });
           }
         }
       }
@@ -41,7 +43,7 @@ export function getFile(e: Event) {
   }
 
   let carbonMaterialBox = document.getElementById('carbon');
-
+  // FIXME: This should select the Carbon material box, but does not.
   if (carbonMaterialBox) {
     carbonMaterialBox.focus();
   }
