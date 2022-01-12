@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5", // Specify ECMAScript target version
+        "target": "es2018", // Specify ECMAScript target version
         "lib": [
             "dom",
             "dom.iterable",
@@ -25,13 +25,13 @@
         "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
         "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement
     },
-    "include": [
-        "src/**/*" // *** The files TypeScript should type check ***
+    "include": [ // *** The files TypeScript should type check ***
+        "src/**/*"
     ],
-    "exclude": [
+    "exclude": [ // *** The files to not type check ***
         "node_modules",
         "build"
-    ], // *** The files to not type check ***
+    ],
     "baseUrl": "./",
     "paths": {
         "*": [
