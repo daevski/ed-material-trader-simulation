@@ -42,11 +42,11 @@ To debug the react.js code you can create a launch.json file for VS Code. When y
 
 > Note: The app version needs to be updated manually in `snowpack.config.js` before building!
 
-Create a local `./build` directory that contains "production" code. You may copy this folder and host it with apache as is.
-
 ```plaintext
 npx snowpack build
 ```
+
+This will generate a `./build` folder that contains the fully built website code. You may copy this folder and host it with apache as is.
 
 ## License
 
