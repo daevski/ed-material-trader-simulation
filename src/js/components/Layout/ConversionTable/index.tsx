@@ -3,6 +3,7 @@ import React from 'https://cdn.skypack.dev/react';
 
 import MaterialCategory from './MaterialCategory/index';
 import { generateCategorySet } from './conversionTableFunctions';
+import { materialBoxHover } from './MaterialCategory/MaterialBox/materialBoxFunctions';
 
 type ConversionTableProps = {
   materialType: string;
@@ -23,12 +24,34 @@ export default class ConversionTable extends React.Component<ConversionTableProp
     active: false,
     userData: null,
   };
+  thisMaterialType = this.props.materialType;
+  allMaterialData = this.props.materialData;
+  userData = this.props.userData;
+
   generateCategorySet = (categories: Set<string>, data: any, type: string) =>
     generateCategorySet(categories, data, type);
 
-  // thisMaterialType = this.props.materialType;
-  // allMaterialData = this.props.materialData;
-  // userData = this.props.userData;
+  // componentDidMount() {
+  //   let firstMaterials: (Element | null)[] = [
+  //     document.querySelector('#carbon'),
+  //     document.querySelector('#exceptional scrambled emission data'),
+  //     document.querySelector('#chemical storage units'),
+  //   ];
+  //   let firstVisibleMaterial = null;
+
+  //   for (let el in firstMaterials) {
+  //     if (document.querySelector('.conversion-table.active')?.contains(firstMaterials[el])) {
+  //       firstVisibleMaterial = firstMaterials[el];
+  //       break;
+  //     }
+  //   }
+
+  //   if (firstVisibleMaterial != null) {
+  //     let forcedEvent = new MouseEvent('forced');
+  //     forcedEvent.target = firstVisibleMaterial;
+  //     materialBoxHover(forcedEvent, this);
+  //   }
+  // }
 
   render() {
     this.generateCategorySet(this.state.categories, this.props.materialData, this.props.materialType);

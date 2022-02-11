@@ -1,21 +1,29 @@
-import React from 'https://cdn.skypack.dev/react';
+// @ts-ignore
+import React, { onChange } from 'https://cdn.skypack.dev/react';
 
 import { tableHeightToggle } from '../ConversionTable/conversionTableFunctions';
 import { setSelectedBoxes } from '../ConversionTable/MaterialCategory/MaterialBox/materialBoxFunctions';
 
-export default class MaterialTypeSelector extends React.Component {
-  updateView(e) {
+type Props = {
+  materialData: any;
+};
+
+export default class MaterialTypeSelector extends React.Component<Props> {
+  props = { materialData: null };
+  updateView(e: onChange) {
     var val = e.target.value;
     var tables = Array.from(document.getElementsByClassName('conversion-table'));
     var tableName = val;
     var newActiveTable = document.getElementById(tableName);
 
-    tables.forEach((element) => {
-      element.classList.remove('active');
-    });
-    newActiveTable.classList.add('active');
-    tableHeightToggle(true);
-    setSelectedBoxes(e, 'reset');
+    if (newActiveTable) {
+      tables.forEach((element) => {
+        element.classList.remove('active');
+      });
+      newActiveTable.classList.add('active');
+      tableHeightToggle(true);
+      setSelectedBoxes(e, 'reset');
+    }
   }
   render() {
     var materialData = this.props.materialData;
@@ -26,7 +34,7 @@ export default class MaterialTypeSelector extends React.Component {
             Object.entries(typesArray).map(([materialType, _]) => <option value={materialType}>{materialType}</option>),
           )}
         </select>
-        <label for="material-type">Resource Type</label>
+        <label htmlFor="material-type">Resource Type</label>
       </div>
     );
   }

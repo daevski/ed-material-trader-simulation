@@ -5,6 +5,7 @@ import { toggleUserDataOptions } from './layoutFunctions';
 
 type UserDataSectionProps = {
   getFile: any;
+  layoutComponent: any;
 };
 
 type UserDataSectionState = {
@@ -12,7 +13,7 @@ type UserDataSectionState = {
 };
 
 export default class UserDataSection extends Component<UserDataSectionProps, UserDataSectionState> {
-  props: UserDataSectionProps = { getFile: null };
+  props: UserDataSectionProps = { getFile: null, layoutComponent: null };
   state: UserDataSectionState = { toggleUserDataOptions: null };
   toggleUserDataOptions = (e: React.MouseEvent) => toggleUserDataOptions(e);
   getFile = (e: MouseEvent) => this.props.getFile(e);
@@ -31,7 +32,7 @@ export default class UserDataSection extends Component<UserDataSectionProps, Use
             </b>
             . (If there are multiple, make sure it's the most recent one!
           </p>
-          <input type="file" onChange={(e) => this.props.getFile(e)} />
+          <input type="file" onChange={(e) => this.props.getFile(e, this.props.layoutComponent, 'userData')} />
         </div>
       </div>
     );

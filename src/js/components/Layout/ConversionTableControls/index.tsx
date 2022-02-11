@@ -10,6 +10,7 @@ type ConversionTableControlProps = {
 };
 
 export default class ConversionTableControls extends React.Component<ConversionTableControlProps> {
+  props = { materialData: null };
   tableHeightToggle = () => tableHeightToggle();
 
   render() {
