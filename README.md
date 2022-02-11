@@ -20,7 +20,7 @@ This app has been created using [React.js][reactjs-org]. (And with an amazing [s
 Run a local web server which will open the application in your default browser:
 
 ```plaintext
-npm run dev
+npx snowpack dev
 ```
 
 ### Debugging
