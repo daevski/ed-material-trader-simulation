@@ -7,23 +7,24 @@ import ConversionTableControls from './ConversionTableControls';
 import UserDataSection from './UserDataSection';
 import { getFile } from './layoutFunctions';
 
-type LayoutProps = {
+interface LayoutProps {
   materialData: any;
-};
+}
 
-type LayoutState = {
+interface LayoutState {
   userData: any;
-};
-export default class Layout extends Component<LayoutState, LayoutProps> {
+}
+
+export default class Layout extends Component {
   state: LayoutState = { userData: null };
   props: LayoutProps = { materialData: null };
-  getFile = (e: Event) => getFile(e, this);
+  getFile = (e: Event, thisComponent: Component, stateKeyName: string) => getFile(e, thisComponent, stateKeyName);
   render() {
     let allMaterialData = this.props.materialData;
     return (
       <div>
         <PageHeader />
-        <UserDataSection getFile={this.getFile} />
+        <UserDataSection getFile={this.getFile} layoutComponent={this} />
         <div id="conversion-app">
           <hr />
           <ConversionTableControls materialData={allMaterialData} />

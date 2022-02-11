@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export function getFile(e: Event, thisComponent: Component) {
+export function getFile(e: Event, thisComponent: Component, stateKeyName: string) {
   e.preventDefault();
   const reader = new FileReader();
   reader.onload = (e: ProgressEvent<FileReader>) => {
@@ -11,7 +11,9 @@ export function getFile(e: Event, thisComponent: Component) {
         var journalData = text.split(/\r\n|\n/);
         for (var lineNum = 0; lineNum < journalData.length - 1; lineNum++) {
           if (journalData[lineNum].includes('"event":"Materials"')) {
-            thisComponent.setState({ userData: JSON.parse(journalData[lineNum]) });
+            let obj: { [key: string]: string } = {};
+            obj[stateKeyName] = JSON.parse(journalData[lineNum]);
+            thisComponent.setState(obj);
           }
         }
       }

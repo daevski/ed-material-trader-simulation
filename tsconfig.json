@@ -4,7 +4,8 @@
         "lib": [
             "dom",
             "dom.iterable",
-            "esnext"
+            "esnext",
+            "es6"
         ], // List of library files to be included in the compilation
         "allowJs": true, // Allow JavaScript files to be compiled
         "skipLibCheck": true, // Skip type checking of all declaration files
@@ -18,9 +19,13 @@
         "resolveJsonModule": true, // Include modules imported with .json extension
         "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
         "jsx": "react", // Support JSX in .tsx files
-        "sourceMap": true, // Generate corrresponding .map file
+        "sourceMap": true, // Generate corresponding .map file
         "declaration": true, // Generate corresponding .d.ts file
         "noUnusedLocals": true, // Report errors on unused locals
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
         "noUnusedParameters": true, // Report errors on unused parameters
         "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
         "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement
@@ -32,10 +37,10 @@
         "node_modules",
         "build"
     ],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
         "*": [
-            ".snowpack/types/*"
-        ]
+            ".snowpack/types/*",
+        ],
     },
 }
