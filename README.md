@@ -1,6 +1,10 @@
-<!-- markdownlint-configure-file { "MD033": { "allowed_elements": ["details", "summary", "b", "br"] } } -->
-
 # Material Trader Simulation for Elite Dangerous
+
+<!-- Github Badges -->
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=daevski_ed-material-trader-simulation&metric=alert_status)][sonarcloud-status]
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=daevski_ed-material-trader-simulation&metric=sqale_rating)][sonarcloud-status]
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=daevski_ed-material-trader-simulation&metric=security_rating)][sonarcloud-status]
+[![Vulnerabilities](https://snyk.io/test/github/daevski/ed-material-trader-simulation/badge.svg)][snyk]
 
 This tool is a mock of the in-game material trader UI. Development is still in the Alpha phase (not all features are finished). Feedback is welcome, new releases coming soon!
 
@@ -62,8 +66,12 @@ This will generate a `./build` folder that contains the fully built website code
 
 [GNU GPLv3][license]
 
+<!-- markdownlint-configure-file { "MD033": { "allowed_elements": ["details", "summary", "b", "br"] } } -->
+
 <!-- Link References -->
 [license]: https://github.com/daevski/ed-material-trader-simulation/blob/main/LICENSE
 [reactjs-org]: https://reactjs.org
 [slim-react-starter]: https://github.com/nafeu/slim-react-starter
 [daevco-development-url]: https://prototype.daev.co/edmts/
+[sonarcloud-status]: https://sonarcloud.io/summary/new_code?id=daevski_ed-material-trader-simulation
+[snyk]: https://snyk.io/test/github/daevski/ed-material-trader-simulation/badge.svg
