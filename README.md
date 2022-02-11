@@ -1,3 +1,5 @@
+<!-- markdownlint-configure-file { "MD033": { "allowed_elements": ["details", "summary", "b", "br"] } } -->
+
 # Material Trader Simulation for Elite Dangerous
 
 This tool is a mock of the in-game material trader UI. Development is still in the Alpha phase (not all features are finished). Feedback is welcome, new releases coming soon!
@@ -17,7 +19,12 @@ Run a local web server which will open the application in your default browser:
 npm run dev
 ```
 
-To debug the react.js code you can create a launch.json file for VS Code. When you hit F5, it should open the app in Chrome and breakpoints can be set in VS Code to debug it there.
+### Debugging
+
+To debug the react.js code you can create a launch.json file in VS Code. When you hit F5, it should open the app in Chrome and breakpoints can be set in VS Code to debug it there.
+
+<details>
+  <summary><b>Expand me to see launch.json snippet!</b></summary>
 
 ```plaintext
 {
@@ -37,6 +44,9 @@ To debug the react.js code you can create a launch.json file for VS Code. When y
     ]
 }
 ```
+
+</details>
+<br />
 
 ## Build
 
